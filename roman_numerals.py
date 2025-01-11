@@ -104,9 +104,23 @@ class RomanNumeral(BaseRomanNumeral):
                 int_val += roman_to_int_map[char]
         return int_val
 
-
     def int_to_roman(self, num: int) -> str:
-        val: list[int] = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        val: list[int] = [
+            1000,
+            900,
+            500,
+            400,
+            100,
+            90,
+            50,
+            40,
+            10,
+            9,
+            5,
+            4,
+            1
+        ]
+
         syb: list[str] = [
             "M",
             "CM",
