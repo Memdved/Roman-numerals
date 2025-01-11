@@ -1,78 +1,78 @@
-"""Модуль для тестирования."""
-
+"""Testing module."""
 
 import unittest
 from roman_numerals import RomanNumeral
 
 
 class TestRomanNumeral(unittest.TestCase):
-    """Класс для тестирования римских цифр."""
+    """A class for testing Roman numerals."""
 
     def test_int_to_roman(self):
-        """Тестирование метода int_to_roman.
+        """Test int_to_roman method.
 
-        Проверяет, что метод int_to_roman правильно преобразует целые числа в римские цифры.
+        Checks that the int_to_roman method correctly converts integers to Roman numerals.
         """
-        self.assertEqual(str(RomanNumeral(1)), 'I')
-        self.assertEqual(str(RomanNumeral(4)), 'IV')
-        self.assertEqual(str(RomanNumeral(9)), 'IX')
-        self.assertEqual(str(RomanNumeral(58)), 'LVIII')
-        self.assertEqual(str(RomanNumeral(1994)), 'MCMXCIV')
+        self.assertEqual(str(RomanNumeral(1)), "I")
+        self.assertEqual(str(RomanNumeral(4)), "IV")
+        self.assertEqual(str(RomanNumeral(9)), "IX")
+        self.assertEqual(str(RomanNumeral(58)), "LVIII")
+        self.assertEqual(str(RomanNumeral(1994)), "MCMXCIV")
 
     def test_add(self):
-        """Тестирование метода __add__.
+        """Testing the __add__ method.
 
-        Проверяет, что метод __add__ правильно складывает римские цифры.
+        Verifies that the __add__ method correctly adds Roman numerals.
         """
-        self.assertEqual(str(RomanNumeral(1) + 1), 'II')
-        self.assertEqual(str(RomanNumeral(1) + RomanNumeral(2)), 'III')
-        self.assertEqual(str(RomanNumeral(1) + RomanNumeral(3)), 'IV')
+        self.assertEqual(str(RomanNumeral(1) + 1), "II")
+        self.assertEqual(str(RomanNumeral(1) + RomanNumeral(2)), "III")
+        self.assertEqual(str(RomanNumeral(1) + RomanNumeral(3)), "IV")
 
     def test_sub(self):
-        """Тестирование метода __sub__.
+        """Testing the __sub__ method.
 
-        Проверяет, что метод __sub__ правильно вычитает римские цифры.
+        Verifies that the __sub__ method correctly subtracts Roman numerals.
         """
-        self.assertEqual(str(RomanNumeral(3) - RomanNumeral(1)), 'II')
-        self.assertEqual(str(RomanNumeral(4) - RomanNumeral(1)), 'III')
-        self.assertEqual(str(RomanNumeral(5) - RomanNumeral(1)), 'IV')
+        self.assertEqual(str(RomanNumeral(3) - RomanNumeral(1)), "II")
+        self.assertEqual(str(RomanNumeral(4) - RomanNumeral(1)), "III")
+        self.assertEqual(str(RomanNumeral(5) - RomanNumeral(1)), "IV")
 
     def test_mul(self):
-        """Тестирование метода __mul__.
+        """Testing the __mul__ method.
 
-        Проверяет, что метод __mul__ правильно умножает римские цифры.
+        Verifies that the __mul__ method multiplies Roman numerals correctly.
         """
-        self.assertEqual(str(RomanNumeral(2) * RomanNumeral(2)), 'IV')
-        self.assertEqual(str(RomanNumeral(2) * RomanNumeral(3)), 'VI')
-        self.assertEqual(str(RomanNumeral(2) * RomanNumeral(4)), 'VIII')
+        self.assertEqual(str(RomanNumeral(2) * RomanNumeral(2)), "IV")
+        self.assertEqual(str(RomanNumeral(2) * RomanNumeral(3)), "VI")
+        self.assertEqual(str(RomanNumeral(2) * RomanNumeral(4)), "VIII")
 
     def test_truediv(self):
-        """Тестирование метода __truediv__.
+        """Testing the __truediv__ method.
 
-        Проверяет, что метод __truediv__ правильно делит римские цифры.
+        Verifies that the __truediv__ method correctly divides Roman numerals.
         """
-        self.assertEqual(str(RomanNumeral(4) / RomanNumeral(2)), 'II')
-        self.assertEqual(str(RomanNumeral(6) / RomanNumeral(2)), 'III')
-        self.assertEqual(str(RomanNumeral(8) / RomanNumeral(2)), 'IV')
+        self.assertEqual(str(RomanNumeral(4) / RomanNumeral(2)), "II")
+        self.assertEqual(str(RomanNumeral(6) / RomanNumeral(2)), "III")
+        self.assertEqual(str(RomanNumeral(8) / RomanNumeral(2)), "IV")
 
     def test_floordiv(self):
-        """Тестирование метода __floordiv__.
+        """Testing the __floordiv__ method.
 
-        Проверяет, что метод __floordiv__ правильно делит римские цифры.
+        Verifies that the __floordiv__ method correctly divides Roman numerals.
         """
-        self.assertEqual(str(RomanNumeral(4) // RomanNumeral(2)), 'II')
-        self.assertEqual(str(RomanNumeral(6) // RomanNumeral(2)), 'III')
-        self.assertEqual(str(RomanNumeral(8) // RomanNumeral(2)), 'IV')
+        self.assertEqual(str(RomanNumeral(4) // RomanNumeral(2)), "II")
+        self.assertEqual(str(RomanNumeral(6) // RomanNumeral(2)), "III")
+        self.assertEqual(str(RomanNumeral(8) // RomanNumeral(2)), "IV")
 
     def test_mod(self):
-        """Тестирование метода __mod__.
+        """Testing the __mod__ method.
 
-        Проверяет, что метод __mod__ правильно вычисляет остаток от деления римских цифр.
+        Verifies that the __mod__ method correctly calculates
+        the remainder from dividing Roman numerals.
         """
-        self.assertEqual(str(RomanNumeral(4) % RomanNumeral(2)), '')
-        self.assertEqual(str(RomanNumeral(6) % RomanNumeral(4)), 'II')
-        self.assertEqual(str(RomanNumeral(5) % RomanNumeral(2)), 'I')
+        self.assertEqual(str(RomanNumeral(4) % RomanNumeral(2)), "")
+        self.assertEqual(str(RomanNumeral(6) % RomanNumeral(4)), "II")
+        self.assertEqual(str(RomanNumeral(5) % RomanNumeral(2)), "I")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
