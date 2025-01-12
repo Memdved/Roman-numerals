@@ -61,6 +61,30 @@ class BaseRomanNumeral(abc.ABC):
     def __mod__(self, other: "BaseRomanNumeral") -> "BaseRomanNumeral":
         pass
 
+    @abc.abstractmethod
+    def __eq__(self, other: "BaseRomanNumeral") -> bool:
+        pass
+
+    @abc.abstractmethod
+    def __ne__(self, other: "BaseRomanNumeral") -> bool:
+        pass
+
+    @abc.abstractmethod
+    def __lt__(self, other: "BaseRomanNumeral") -> bool:
+        pass
+
+    @abc.abstractmethod
+    def __le__(self, other: "BaseRomanNumeral") -> bool:
+        pass
+
+    @abc.abstractmethod
+    def __gt__(self, other: "BaseRomanNumeral") -> bool:
+        pass
+
+    @abc.abstractmethod
+    def __ge__(self, other: "BaseRomanNumeral") -> bool:
+        pass
+
 
 class RomanNumeral(BaseRomanNumeral):
     """Roman numeral class."""
@@ -94,7 +118,7 @@ class RomanNumeral(BaseRomanNumeral):
             "L": 50,
             "C": 100,
             "D": 500,
-            "M": 1000
+            "M": 1000,
         }
         int_val = 0
         for i, char in enumerate(roman):
@@ -105,45 +129,13 @@ class RomanNumeral(BaseRomanNumeral):
         return int_val
 
     def int_to_roman(self, num: int) -> str:
-        val: list[int] = [
-            1000,
-            900,
-            500,
-            400,
-            100,
-            90,
-            50,
-            40,
-            10,
-            9,
-            5,
-            4,
-            1
-        ]
-
-        syb: list[str] = [
-            "M",
-            "CM",
-            "D",
-            "CD",
-            "C",
-            "XC",
-            "L",
-            "XL",
-            "X",
-            "IX",
-            "V",
-            "IV",
-            "I",
-        ]
-
-        roman_num: str = ""
-        iteration: int = 0
-        while num > 0:
-            for _ in range(num // val[iteration]):
-                roman_num += syb[iteration]
-                num -= val[iteration]
-            iteration += 1
+        val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        syb = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+        roman_num = ""
+        for i, v in enumerate(val):
+            while num >= v:
+                roman_num += syb[i]
+                num -= v
         return roman_num
 
     def __add__(self, other):
