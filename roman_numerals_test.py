@@ -42,7 +42,7 @@ class TestRomanNumeral(unittest.TestCase):
         Verifies that the __mul__ method multiplies Roman numerals correctly.
         """
         self.assertEqual(str(RomanNumeral(2) * RomanNumeral(2)), "IV")
-        self.assertEqual(str(RomanNumeral(2) * RomanNumeral(3)), "VI")
+        self.assertEqual(str(RomanNumeral(2) * "III"), "VI")
         self.assertEqual(str(RomanNumeral(2) * RomanNumeral(4)), "VIII")
 
     def test_truediv(self):

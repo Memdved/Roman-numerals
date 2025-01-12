@@ -175,3 +175,33 @@ class RomanNumeral(BaseRomanNumeral):
         if isinstance(other, RomanNumeral):
             return RomanNumeral(self.__int_representation % int(other))
         return RomanNumeral(self.__int_representation % int(RomanNumeral(other)))
+
+    def __eq__(self, other):
+        if isinstance(other, RomanNumeral):
+            return self.__int_representation == int(other)
+        return self.__int_representation == int(RomanNumeral(other))
+
+    def __ne__(self, other):
+        if isinstance(other, RomanNumeral):
+            return self.__int_representation != int(other)
+        return self.__int_representation != int(RomanNumeral(other))
+
+    def __lt__(self, other):
+        if isinstance(other, RomanNumeral):
+            return self.__int_representation < int(other)
+        return self.__int_representation < int(RomanNumeral(other))
+
+    def __le__(self, other):
+        if isinstance(other, RomanNumeral):
+            return self.__int_representation <= int(other)
+        return self.__int_representation <= int(RomanNumeral(other))
+
+    def __gt__(self, other):
+        if isinstance(other, RomanNumeral):
+            return self.__int_representation > int(other)
+        return self.__int_representation > int(RomanNumeral(other))
+
+    def __ge__(self, other):
+        if isinstance(other, RomanNumeral):
+            return self.__int_representation >= int(other)
+        return self.__int_representation >= int(RomanNumeral(other))

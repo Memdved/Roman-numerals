@@ -1,102 +1,62 @@
-## Русский
-# Римские цифры
-
-Этот модуль предоставляет класс для работы с римскими цифрами - `RomanNumeral`.
-
-## Установка
-
-Этот модуль не требует установки, так как он представляет собой простой Python-файл.
-
-## Использование
-
-```python
-from roman_numerals import RomanNumeral
-
-# Создание римской цифры
-num = RomanNumeral(1)
-
-# Преобразование римской цифры в строку
-print(str(num))  # Вывод: I
-
-# Преобразование римской цифры в целое число
-print(int(num))  # Вывод: 1
-
-# Сложение римских цифр
-print(num + 1)  # Вывод: II
-
-# Вычитание римских цифр
-print(num - RomanNumeral(1))  # Вывод: I
-
-# Умножение римских цифр
-print(num * 2)  # Вывод: II
-
-# Деление римских цифр
-print(num / RomanNumeral(2))  # Вывод: I
-
-# Целочисленное деление римских цифр
-print(num // RomanNumeral(2))  # Вывод: I
-
-# Остаток от деления римских цифр
-print(num % RomanNumeral(2))  # Вывод: I
-```
-
-▌Тестирование
-
-Для тестирования этого модуля вы можете использовать стандартный модуль unittest в Python. Пример тестового кода можно найти в файле test_roman_numerals.py.
-
-▌Лицензия
-
-Этот модуль распространяется под лицензией MIT.
-#
-#
-#
-
-## English
-# Roman numerals
-
-This module provides a class for working with Roman numerals - `RomanNumeral`.
-
-## Installation
-
-This module does not require installation as it is a simple Python file.
+# Roman Numeral Module
+This module provides a class for working with Roman numerals. The RomanNumeral class allows you to convert between Roman numerals and integers, as well as perform arithmetic operations with Roman numerals.
 
 ## Usage
+To use the RomanNumeral class, you can create an instance of the class with either an integer or a Roman numeral string:
+```Python
+from roman_numeral import RomanNumeral
 
-```python
-from roman_numerals import RomanNumeral
+# Create a RomanNumeral instance with an integer
+num1 = RomanNumeral(10)
 
-# Create a Roman numeral
-num = RomanNumeral(1)
+# Create a RomanNumeral instance with a Roman numeral string
+num2 = RomanNumeral("X")
+```
+### You can then perform arithmetic operations with the RomanNumeral instances:
 
-# Convert the Roman numeral to a string
-print(str(num))  # Output: I
+```Python
+# Addition
+result = num1 + num2
+print(result)  # Output: XX
 
-# Convert Roman numeral to an integer
-print(int(num))  # Output: 1
+# Subtraction
+result = num1 - num2
+print(result)  # Output: 0
 
-# Adding Roman numerals
-print(num + 1) # Output: II
+# Multiplication
+result = num1 * num2
+print(result)  # Output: C
 
-# Subtraction of Roman numerals
-print(num - RomanNumeral(1)) # Output: I
+# Division
+result = num1 // num2
+print(result)  # Output: I
 
-# Multiplication of Roman numerals
-print(num * 2) # Output: II
-
-# Division of Roman numerals
-print(num / RomanNumeral(2)) # Output: I
-
-# Integer division of Roman numerals
-print(num // RomanNumeral(2)) # Output: I
-
-# The remainder of Roman numerals division
-print(num % RomanNumeral(2)) # Output: I
+# Modulus
+result = num1 % num2
+print(result)  # Output: 0
 ```
 
-▌Testing
+### You can also compare RomanNumeral instances using comparison operators:
 
-You can use the standard unittest module in Python to test this module. Sample test code can be found in the file test_roman_numerals.py.
+```Python
+# Equality
+print(num1 == num2)  # Output: True
 
-▌License
+# Inequality
+print(num1 != num2)  # Output: False
 
-This module is distributed under the MIT license.
+# Less than
+print(num1 < num2)  # Output: False
+
+# Less than or equal to
+print(num1 <= num2)  # Output: True
+
+# Greater than
+print(num1 > num2)  # Output: False
+
+# Greater than or equal to
+print(num1 >= num2)  # Output: True
+```
+
+# License
+This module is licensed under the MIT License. See the LICENSE file for more information.
